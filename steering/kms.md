@@ -15,48 +15,44 @@ AWS KMS Configuration Requirements
 
 This is not a comprehensive list of all resources that support KMS encryption, but rather a sample of resources that support KMS encryption.
 
-```typescript Good
-  // Server Side Encryption: AWS KMS Customer Managed Key
+```typescript Secrets Manager
+  // Good! [Server Side Encryption: AWS KMS Customer Managed Key]
   new secretsmanager.Secret(this, 'SampleSecret', {
     secretName: 'Sample',
     encryptionKey: new cdk.aws_kms.Key(this, 'SecretSecretKey', { }),
     // ...
   });
-```
 
-```typescript Bad
-  // No Encryption
+  // Bad! [No Encryption]
   new secretsmanager.Secret(this, 'SampleSecret', {
     secretName: 'Sample',
     // ...
   });
 ```
 
-```typescript Good
-  // Server Side Encryption: AWS KMS Customer Managed Key
+```typescript S3
+  // Good! [Server Side Encryption: AWS KMS Customer Managed Key]
   new s3.Bucket(this, 'SampleBucket', {
     bucketName: 'Sample',
     encryption: s3.BucketEncryption.KMS,
     encryptionKey: new cdk.aws_kms.Key(this, 'SampleBucketKey', { }),
     // ...
   });
-```
 
-```typescript Bad
-  // No Encryption
+  // Bad! [No Encryption]
   new s3.Bucket(this, 'SampleBucket', {
     bucketName: 'Sample',
     // ...
   });
 
-  // Server Side Encryption: AWS Managed KMS Key
+  // Bad! [Server Side Encryption: AWS Managed KMS Key]
   new s3.Bucket(this, 'SampleBucket', {
     bucketName: 'Sample',
     encryption: s3.BucketEncryption.KMS_MANAGED,
     // ...
   });
 
-  // Server Side Encryption: S3 Managed
+  // Bad! [Server Side Encryption: S3 Managed]
   new s3.Bucket(this, 'SampleBucket', {
     bucketName: 'Sample',
     encryption: s3.BucketEncryption.S3_MANAGED,

@@ -3,6 +3,7 @@ name: "aws-cdk-security"
 displayName: "AWS CDK Security"
 description: "Perform AWS CDK Security Reviews"
 keywords: ["aws", "cdk"]
+author: "Michael Ahern"
 ---
 
 # AWS CDK Security Review Power
