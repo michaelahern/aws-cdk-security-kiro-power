@@ -15,6 +15,8 @@ AWS KMS Configuration Requirements
 
 This is not a comprehensive list of all resources that support KMS encryption, but rather a sample of resources that support KMS encryption.
 
+Secrets Manager
+
 ```typescript Secrets Manager
   // Good! [Server Side Encryption: AWS KMS Customer Managed Key]
   new secretsmanager.Secret(this, 'SampleSecret', {
@@ -29,6 +31,8 @@ This is not a comprehensive list of all resources that support KMS encryption, b
     // ...
   });
 ```
+
+S3
 
 ```typescript S3
   // Good! [Server Side Encryption: AWS KMS Customer Managed Key]

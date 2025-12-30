@@ -14,6 +14,8 @@ AWS SSL/TLS Configuration Requirements
 
 This is not a comprehensive list of all resources that support enabling/disabling SSL/TLS enforcement, but rather a sample of resources that do.
 
+S3
+
 ```typescript S3
   // Good! [SSL Explicitly Enforced]
   new s3.Bucket(this, 'SampleBucket', {
@@ -35,6 +37,8 @@ This is not a comprehensive list of all resources that support enabling/disablin
     // ...
   });
 ```
+
+CloudFront
 
 ```typescript CloudFront
   // Good! [TLS 1.2]

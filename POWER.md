@@ -1,12 +1,12 @@
 ---
 name: "aws-cdk-security"
-displayName: "AWS CDK Security"
+displayName: "AWS CDK Security Review"
 description: "Perform AWS CDK Security Reviews"
 keywords: ["aws", "cdk"]
 author: "Michael Ahern"
 ---
 
-# AWS CDK Security Review Power
+# AWS CDK Security Review Kiro Power
 
 A specialized power for reviewing AWS infrastructure as code, specifically CDK written in TypeScript, conforms to foundational security policy configurations.
 
